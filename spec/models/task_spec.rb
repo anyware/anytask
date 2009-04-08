@@ -6,8 +6,9 @@ describe Task do
   end
 
   it "should be valid" do
-    @task.name = "new Task"
-    @task.status = "New"
-    @task.should be_valid
+    @task.should have(1).error_on(:name)
+    @task.should have(1).error_on(:status)
+    @task.should have(1).error_on(:priority)
+    @task.should_not be_valid
   end
 end
