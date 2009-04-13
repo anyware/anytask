@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+
   def new
     @user_session = UserSession.new
   end
@@ -18,4 +19,5 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Logout successful!"
     redirect_back_or_default new_user_session_url
   end
+  
 end
