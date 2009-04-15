@@ -16,8 +16,14 @@ describe User do
     @user = User.create!(@valid_attributes)
   end
   
+  it "should have a valid factory" do
+    Factory.build(:user).should be_valid
+  end
+  
   it "should invalid an empty instance" do
     @user = User.new
     @user.should_not be_valid
   end
+  
+  
 end

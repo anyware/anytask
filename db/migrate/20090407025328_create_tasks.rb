@@ -5,6 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description
       t.integer :priority
       t.string :status
+      t.integer :user_id, :null => false
 
       t.timestamps
     end
