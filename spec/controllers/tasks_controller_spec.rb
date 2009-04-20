@@ -4,6 +4,11 @@ describe TasksController do
   describe "handling GET /tasks" do
 
     before(:each) do
+      #set_session_for(Factory.build(:user))
+      #controller.stub!(:activate_authlogic)
+      #UserSession.create(users(:whomever))
+      #user = Factory.build(:user)
+      #controller.stub!(:current_user).and_return(user)
       @task = mock_model(Task)
       Task.stub!(:find).and_return([@task])
     end
