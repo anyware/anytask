@@ -3,12 +3,12 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe TasksController do
   describe "handling GET /tasks" do
 
+    before(:all) do
+    end
+
     before(:each) do
-      #set_session_for(Factory.build(:user))
-      #controller.stub!(:activate_authlogic)
-      #UserSession.create(users(:whomever))
-      #user = Factory.build(:user)
-      #controller.stub!(:current_user).and_return(user)
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task)
       Task.stub!(:find).and_return([@task])
     end
@@ -41,6 +41,8 @@ describe TasksController do
   describe "handling GET /tasks/1" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task)
       Task.stub!(:find).and_return(@task)
     end
@@ -73,6 +75,8 @@ describe TasksController do
   describe "handling GET /tasks/new" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task)
       Task.stub!(:new).and_return(@task)
     end
@@ -110,6 +114,8 @@ describe TasksController do
   describe "handling GET /tasks/1/edit" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task)
       Task.stub!(:find).and_return(@task)
     end
@@ -142,6 +148,8 @@ describe TasksController do
   describe "handling POST /tasks" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task, :to_param => "1")
       Task.stub!(:new).and_return(@task)
     end
@@ -183,6 +191,8 @@ describe TasksController do
   describe "handling PUT /tasks/1" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task, :to_param => "1")
       Task.stub!(:find).and_return(@task)
     end
@@ -234,6 +244,8 @@ describe TasksController do
   describe "handling DELETE /tasks/1" do
 
     before(:each) do
+      activate_authlogic
+      UserSession.create Factory.build(:user)
       @task = mock_model(Task, :destroy => true)
       Task.stub!(:find).and_return(@task)
     end
