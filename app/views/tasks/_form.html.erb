@@ -14,3 +14,6 @@
   <label for="task_status">Status:</label>
   <%= f.text_field :status %>
 </p>
+<p>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+</p>

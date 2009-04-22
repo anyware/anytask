@@ -4,6 +4,8 @@ describe "/tasks/edit.html.erb" do
   include TasksHelper
   
   before do
+    activate_authlogic
+    UserSession.create(Factory.build(:user))
     @task = mock_model(Task)
     @task.stub!(:name).and_return("MyString")
     @task.stub!(:description).and_return("MyText")
