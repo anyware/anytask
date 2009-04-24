@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tasks
+  
   map.resource :user_session
   map.resource :account, :controller => "users"
-  map.resources :users
+  map.resources :users, :has_many => :tasks
   
   map.root :controller => "user_sessions", :action => "new"
   

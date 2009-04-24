@@ -15,6 +15,5 @@ describe Task do
   it "should have defaulf fixtures" do
     Factory.create(:task)
     Task.find_by_name("MyTask").should_not be_nil
-    #Task.first.should_not be_nil
   end
 end
