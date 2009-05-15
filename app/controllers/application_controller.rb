@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
+  before_filter :set_locale
+
+  def set_locale
+    # if params[:locale] is nil then I18n.default_locale will be used
+    I18n.locale = params[:locale] 
+  end
 
   private
     def current_user_session
