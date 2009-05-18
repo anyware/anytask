@@ -3,8 +3,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
   map.resource :account, :controller => "users"
   map.resources :users, :has_many => :tasks
+  # map.resources :tasks
+  map.resources :tasks, :path_prefix => "/users/user_id"
   
-  map.root :controller => "user_sessions", :action => "new"
+#  map.connect '/home' :controller => 'home'
+  
+  map.root :controller => "home"
   
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -36,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-
+  
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
 
@@ -46,5 +50,5 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # map.connect ':controller/:action/:id.:format'
 end

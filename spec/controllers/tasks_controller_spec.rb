@@ -4,11 +4,12 @@ describe TasksController do
   describe "handling GET /tasks" do
 
     before(:all) do
+      Factory.create(:task)
     end
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task)
       Task.stub!(:find).and_return([@task])
     end
@@ -42,7 +43,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task)
       Task.stub!(:find).and_return(@task)
     end
@@ -76,7 +77,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task)
       Task.stub!(:new).and_return(@task)
     end
@@ -115,7 +116,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task)
       Task.stub!(:find).and_return(@task)
     end
@@ -149,7 +150,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task, :to_param => "1")
       Task.stub!(:new).and_return(@task)
     end
@@ -192,7 +193,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task, :to_param => "1")
       Task.stub!(:find).and_return(@task)
     end
@@ -245,7 +246,7 @@ describe TasksController do
 
     before(:each) do
       activate_authlogic
-      UserSession.create Factory.build(:user)
+      UserSession.create User.first
       @task = mock_model(Task, :destroy => true)
       Task.stub!(:find).and_return(@task)
     end

@@ -6,6 +6,7 @@
     <th>Description</th>
     <th>Priority</th>
     <th>Status</th>
+    <th>user id</th>
   </tr>
   <%- @tasks.each do |task|%>
     <tr>
@@ -13,6 +14,7 @@
       <td><%=h task.description %></td>
       <td><%=h task.priority %></td>
       <td><%=h task.status %></td>
+			<td><%=h task.user.id %></td>
     
       <td><%=link_to 'Show', object_url(task) %></td>
       <td><%=link_to 'Edit', edit_object_url(task) %></td>

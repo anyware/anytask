@@ -1,0 +1,10 @@
+<%- @tasks.each do |task|%>
+	<p><%= task.name%></p>
+<% end %>
+
+<span id="tasks">
+<% remote_form_for @task = Task.new, :update => 'tasks' do |f| -%>
+	<%= render :partial => "tasks/form", :locals => { :f => f } %>
+  <%= f.submit "tasks" "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
+</span>

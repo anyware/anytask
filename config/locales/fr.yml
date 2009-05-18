@@ -1,14 +1,11 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+ 
 fr:
-  user:
-    zero: "{{count}} utilisateur"
-    one: "{{count}} utilisateur"
-    other: "{{count}} utilisateurs"
   header:
     logged_in:
-      zero: "connecté"
-      one: "connecté"
-      other: "connectés"
+      zero: "utilisateur connecté"
+      one: "utilisateur connecté"
+      other: "utilisateurs connectés"
+
 

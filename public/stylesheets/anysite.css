@@ -1,0 +1,14 @@
+#header{
+	width:100%;
+	text-align:right;
+}
+#connected{
+	background-color: #4F7599;
+	border: 1px dashed gray;
+	padding: 2px;
+	color: white;
+}
+#connected_count{
+	padding:1px;
+	background-color: #4281C0 ;
+}

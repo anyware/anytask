@@ -2,10 +2,10 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  user:
-    zero: "{{count}} user"
-    one: "{{count}} user"
-    other: "{{count}} users"
   header:
-    logged_in: "logged in"
+    logged_in:
+        zero: "online user"
+        one: "online user"
+        other: "online users"
+
 

@@ -20,9 +20,9 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic"
-  config.gem "giraffesoft-resource_controller", :lib => "resource_controller",  :version => "0.6.1", :source => "git://github.com/giraffesoft/resource_controller.git"
-  config.gem "rspec", :lib => false, :version => ">= 1.2.0" 
-  config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0" 
+  config.gem "giraffesoft-resource_controller", :lib => "resource_controller", :source => "git://github.com/giraffesoft/resource_controller.git"#, :version => "0.6.1"
+  config.gem "rspec", :lib => false #, :version => ">= 1.2.0" 
+  config.gem "rspec-rails", :lib => false #, :version => ">= 1.2.0" 
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl"
   
   
